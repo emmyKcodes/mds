@@ -1,0 +1,21 @@
+{
+  "name": "kinet",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview"
+  },
+  "dependencies": {
+    "@nuxt/icon": "^1.10.3",
+    "gsap": "3.12.5",
+    "lenis": "1.1.14",
+    "nuxt": "3.13.2"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.0.0",
+    "tailwindcss": "^4.0.0"
+  }
+}

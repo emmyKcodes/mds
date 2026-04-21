@@ -1,0 +1,155 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Bebas Neue", sans-serif;
+  --font-body: "Inter", sans-serif;
+  --color-base: #141414;
+  --color-contact-bg: #1e1e1e;
+}
+
+:root {
+  --accent: #7b2fff;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  cursor: none;
+  overflow-x: hidden;
+}
+
+body {
+  background-color: #141414;
+  color: #ffffff;
+  font-family: "Inter", sans-serif;
+  overflow-x: hidden;
+}
+
+/* Custom cursor */
+.cursor-dot {
+  width: 16px;
+  height: 16px;
+  background: var(--accent);
+  border-radius: 50%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: background 0.3s ease;
+  mix-blend-mode: difference;
+}
+
+/* Grain overlay */
+.grain-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9998;
+  opacity: 0.035;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
+  background-size: 256px 256px;
+}
+
+/* Smooth scroll handled by Lenis */
+html.lenis {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+/* Bebas Neue headings */
+.font-display {
+  font-family: "Bebas Neue", sans-serif;
+  letter-spacing: 0.02em;
+}
+
+/* Nav scroll state */
+nav.scrolled {
+  background: rgba(20, 20, 20, 0.8) !important;
+  backdrop-filter: blur(12px);
+}
+
+/* Section label */
+.section-label {
+  font-family: "Inter", sans-serif;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: rgba(255, 255, 255, 0.25);
+}
+
+/* Form fields */
+.form-field {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  font-family: "Inter", sans-serif;
+  font-size: 18px;
+  padding: 16px 0;
+  width: 100%;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.form-field::placeholder {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.form-field:focus {
+  border-bottom-color: var(--accent);
+}
+
+/* Work card rows */
+.work-card {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  transition: border-color 0.3s ease;
+}
+
+/* Service rows */
+.service-row {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+}
+
+/* Scroll indicator animation */
+@keyframes scrollLine {
+  0% { transform: scaleY(0); transform-origin: top; }
+  50% { transform: scaleY(1); transform-origin: top; }
+  51% { transform: scaleY(1); transform-origin: bottom; }
+  100% { transform: scaleY(0); transform-origin: bottom; }
+}
+
+.scroll-line {
+  animation: scrollLine 1.8s ease-in-out infinite;
+}
+
+/* Hide default cursor everywhere */
+a, button, [role="button"] {
+  cursor: none;
+}
+
+/* Overflow clip for headline animations */
+.overflow-clip {
+  overflow: hidden;
+}
+
+/* Magnetic button base */
+.magnetic {
+  display: inline-block;
+  position: relative;
+}
