@@ -71,7 +71,7 @@
 
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
-import { splitText } from '~/composables/useSplitText'
+import { splitText } from '../composables/useSplitText'
 
 const headlineRef = ref<HTMLElement | null>(null)
 const rowsRef = ref<HTMLElement | null>(null)

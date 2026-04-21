@@ -121,7 +121,7 @@
 
 <script setup lang="ts">
 import { ref, onMounted, defineComponent, h } from 'vue'
-import { splitText } from '~/composables/useSplitText'
+import { splitText } from '../composables/useSplitText'
 
 const headlineRef = ref<HTMLElement | null>(null)
 const cardsRef = ref<HTMLElement | null>(null)
